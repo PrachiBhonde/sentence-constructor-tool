@@ -12,8 +12,10 @@
     "pnpm": ">=9.0.0"
   },
   "dependencies": {
+    "bootstrap": "^5.3.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.5.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
@@ -32,10 +34,12 @@
     "tailwindcss": "^4.0.13",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
-    "vite": "^6.2.1",
+    "vite": "^6.2.6",
     "vitest": "^3.0.8"
   },
   "scripts": {
+    "start": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "command -v git >/dev/null 2>&1 && git config core.hooksPath git-hooks || true",
     "build": "vite build",
     "dev:update-deps": "rm -rf pnpm-lock.yaml node_modules/ **/node_modules && pnpm install",
@@ -43,9 +47,9 @@
     "format": "prettier --write .",
     "lint:format": "prettier --cache --check .",
     "lint": "eslint --cache .",
-    "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
     "tsc:check": "tsc",
-    "vitest:run": "vitest run"
+    "vitest:run": "vitest run",
+    "preview": "vite preview"
   },
   "browserslist": [
     ">0.2%",
